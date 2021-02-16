@@ -1,0 +1,35 @@
+{% extends 'asset/base.html' %}
+{% block 'body' %}
+{% load widget_tweaks  %}
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Asset Category</title>
+
+</head>
+<fieldset style="padding: 2px; margin: 40px;">
+
+<body>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+        <th>Sl no.</th>
+        <th>Category Name</th>
+    </tr>
+    </thead>
+    <tbody>
+{% for category in assetscat %}
+    <tr>
+        <td></td>
+        <td>{{ category.cat_name }}</td>
+
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+
+</body>
+
+
+{% endblock %}
+</fieldset>

@@ -1,0 +1,40 @@
+{% extends 'asset/base.html' %}
+{% block 'body' %}
+{% load widget_tweaks  %}
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Asset Category</title>
+<!--    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>-->
+</head>
+ <fieldset style="padding: 2px; margin: 40px; text-align:right;">
+<a href="{% url 'addcat'  %}" class="btn btn-primary">Add Category</a>
+        </fieldset>
+
+<body>
+<fieldset style="padding: 2px; margin: 40px;">
+        <legend> CATEGORY </legend>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+        <th>Category Name</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+{% for category in assetscat %}
+    <tr>
+        <td>{{ category.cat_name }}</td>
+        <td>
+            <a href="/login/editcat/{{ category.id }}"><span class="glyphicon glyphicon-pencil btn btn-primary" >Edit</span></a>
+            <a href="/login/deletecat/{{ category.id }}"  onclick="return confirm('Confirm delete')" style="background-color:#ea1515;" class="btn btn-primary">Delete</a>
+        </td>
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+<br>
+<br>
+{% endblock %}
+</fieldset>
+</body>

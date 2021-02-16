@@ -1,0 +1,43 @@
+{% extends 'asset/base.html' %}
+{% block 'body' %}
+{% load widget_tweaks  %}{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<center><fieldset>
+<form method="POST" class="post-form">
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <h3>ADD CATEGORY</h3>
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Category Name:</label>
+    <div class="col-sm-4">
+        <input type="text" name="cat_name" id="cat_name" required maxlength="200" />
+    </div>
+  </div>
+        <div class="form-group row">
+    <label class="col-sm-2 col-form-label"></label>
+    <div class="col-sm-4">
+        <span style=" font-weight: bold; color:red;">	{{ note }}</span>
+    </div>
+  </div>
+    <div class="form-group row">
+
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <button type="submit" style="margin-left:6em;"  class="btn btn-success">Submit</button>
+    </div>
+  </div>
+    </div>
+</form>
+</fieldset></center>
+</body>
+{% endblock %}

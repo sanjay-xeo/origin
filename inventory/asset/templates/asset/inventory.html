@@ -1,0 +1,37 @@
+{% extends 'asset/base.html' %}
+{% block 'body' %}
+{% load widget_tweaks  %}
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+
+</head>
+
+<fieldset style="padding: 2px; margin: 40px;">
+        <legend>INVENTORY </legend>
+    <body>
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+        <th>Asset Name</th>
+        <th>Asset Date</th>
+        <th>Asset Category</th>
+    </tr>
+    </thead>
+    <tbody>
+{% for asset in assets %}
+    <tr>
+        <td>{{ asset.asset_name }}</td>
+        <td>{{ asset.asset_date }}</td>
+        <td>{{ asset.asset_category }}</td>
+
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+<br>
+<br>
+</body>
+
+</fieldset>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'asset/base.html' %}
+{% block 'body' %}
+{% load widget_tweaks  %}
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+<!--    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>-->
+</head>
+
+<body>
+<center><fieldset>
+
+<form method="POST" class="post-form" style="align-center" >
+        {% csrf_token %}
+    <div class="container">
+<br>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <h3>ADD ASSETS</h3>
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Asset Name:</label>
+    <div class="col-sm-4">
+        <input type="text" name="asset_name" id="asset_name" required maxlength="200" />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Asset Date:</label>
+    <div class="col-sm-4">
+        <input type="date" name="asset_date" style= "width: 178px;height: 28px;" id="asset_date"  />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Asset Category:</label>
+    <div class="col-sm-4">
+        <select id="asset_category" name="asset_category" style= "width: 178px;height: 28px;">
+          <option  value="" selected="selected">---SELECT---</option>
+          {% for category in assetscat %}
+               <option value="{{category.id}}">
+                   {{category.cat_name|capfirst}}
+               </option>
+            {% endfor %}
+        </select>
+    </div>
+  </div>
+          <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Number of assets:</label>
+    <div class="col-sm-4">
+        <input type="text" name="asset_number" id="asset_number" required maxlength="200" value=" " />
+    </div>
+  </div>
+    <div class="form-group row">
+    <label class="col-sm-1 col-form-label"></label>
+    <div class="col-sm-4">
+    <button style="margin-left:6em;" type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </div>
+    </div>
+</form>
+    </fieldset></center>
+</body>
+{% endblock %}
