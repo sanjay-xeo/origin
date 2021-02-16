@@ -123,6 +123,6 @@ def check(request):
     note = "Username or password does not exists."
     alpha = usersrecord.get(uname, "Not Found ! ")
     if alpha == pwd:
-        return render(request, "asset/home.html")
+        return render(request, "asset/home.html", {'uname': uname})
     else:
         return render(request, "asset/login.html", {'note': note})

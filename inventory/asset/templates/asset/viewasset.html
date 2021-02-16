@@ -19,6 +19,7 @@
         <th>Asset Name</th>
         <th>Asset Date</th>
         <th>Asset Category</th>
+        <th>Number of assets</th>
         <th>Actions</th>
     </tr>
     </thead>
@@ -28,6 +29,7 @@
         <td>{{ asset.asset_name }}</td>
         <td>{{ asset.asset_date }}</td>
         <td>{{ asset.asset_category }}</td>
+        <td>{{ asset.asset_number }}</td>
         <td>
             <a href="/login/editasset/{{ asset.id }}"><span class="glyphicon glyphicon-pencil btn btn-primary" >Edit</span></a>
             <a href="/login/deleteasset/{{ asset.id }}"  onclick="return confirm('Confirm delete')" style="background-color:#ea1515;" class="btn btn-primary">Delete</a>

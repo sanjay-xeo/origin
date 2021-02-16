@@ -1,12 +1,9 @@
 {% extends 'asset/base.html' %}
 {% block 'body' %}
 {% load widget_tweaks  %}
-{{ uname }}
-{{ pwd }}
 {% load widget_tweaks  %}
-    <a href = "{% url 'viewasset'  %}">Inventory</a>
-    <br>
-    <a href = "{% url 'addcat'  %}">Add Category</a>
+
+<h1>Hello {{ uname }} !!</h1>
 
 
 {% endblock %}
